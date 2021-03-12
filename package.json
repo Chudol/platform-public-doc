@@ -1,0 +1,49 @@
+{
+  "name": "platformpublicapilib",
+  "version": "1.0.0",
+  "description": "### Authorization - Every endpoint needs header parameter x-api-key , which is SECRET KEY of platform.  ### Additionally Data - Some api requests accepting query param \"additionally_data\", which is string of additionally data you want to pull from API divided by comma.    ##### For Example:  - Get User request is pulling user data, Online Time, Purchased courses, finished and in progress lessons. - If you want additionally data, like: \"courses analytics, lessons analytics, subscriptions\", then you can send query param ``` additionally_data ``` with content: ```courses,lessons,subscriptions``` and API will send you with user data also Course Analytics, Lessons Analytics and subscriptions of user.   - In description at every endpoint you will find what additionally data you can ask API  ### Pagination - In List endpoints api sends object with 2 props. ```items``` and ```pagination```   > items is an array of items (like users, courses)   > pagination is object, which contains totalItems (total items for ALL pages), totalPages, page (page of items), limit (number of items for one page)   - Page starting with 0. It means, that first page is 0 and second page is 1",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "scripts": {
+    "lint": "eslint lib",
+    "test": "mocha --recursive"
+  },
+  "author": "APIMATIC SDK Generator",
+  "bugs": {
+    "email": "support@apimatic.io"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^5.2.0",
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "request": "^2.55.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "commonjs": true,
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ],
+      "no-underscore-dangle": 0,
+      "strict": 0,
+      "prefer-rest-params": 0
+    }
+  }
+}
